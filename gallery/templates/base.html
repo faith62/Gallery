@@ -1,5 +1,5 @@
 {% load bootstrap4 %}
-{% load static%}
+{% load static %}
 <!Doctype html>
 <html lang="en">
   <head>
@@ -12,6 +12,7 @@
     {% block styles %}
         {% bootstrap_css %}
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        
     {% endblock %}
 
     <!-- Required meta tags -->
@@ -23,6 +24,33 @@
   </head>
   <body>
     {% include "navbar.html" %}
-    {% block content %} <h1>Photos for{{category}}</h1> {%endblock%}
+    {% block content %}
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-2">Jumbotron Heading Text Goes Here</h1>
+          <p class="lead">Your jumbotron text content goes here...</p>
+          <button class="btn btn-outline-danger">This is a Button</button>
+        </div>
+    </div>
+
+    <div class="container-fluid tm-container-content tm-mt-60">
+        <div class="row mb-4">
+            <h2 class="col-6 tm-text-primary">
+                Photos for{{category}}
+            </h2>
+           
+        </div>
+        <div class="row tm-mb-90 tm-gallery">
+        	<div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
+                image goes here               
+                <div class="d-flex justify-content-between tm-text-gray">
+                    <span class="tm-text-gray-light">{{ image.title }}</span>                    
+                </div>
+            </div>
+        </div>
+   
+
+    
+     {%endblock%}
   </body>
 </html>

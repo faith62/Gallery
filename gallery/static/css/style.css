@@ -1,3 +1,15 @@
-h1{
-    color:red
+
+.jumbotron{
+    background: url("https://images.unsplash.com/photo-1609034227505-5876f6aa4e90?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fGNhbWVyYXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60") no-repeat 0px 0px;
+    background-size:cover;
+    /* background-position:; */
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    -moz-background-size: cover;
+    background-size: 1900px 500px;
+    min-height: 400px;
+    opacity: 0.5;
+    color: white;
+    
 }
