@@ -1,4 +1,5 @@
-<!doctype html>
+{% load bootstrap4 %}
+<!Doctype html>
 <html lang="en">
   <head>
     {% if title %}
@@ -6,6 +7,11 @@
     {% else %}
       <title>Photo Gallery </title>
     {% endif %}
+
+    {% block styles %}
+        {% bootstrap_css %}
+    {% endblock %}
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
