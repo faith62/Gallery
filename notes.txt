@@ -1,0 +1,11 @@
+    python3.10 manage.py check.........Run Checks
+    python manage.py makemigrations....Make Migrations
+    python3.10 manage.py sqlmigrate gallery 0001....view migration
+    python3.10 manage.py migrate.....run migration
+
+python manage.py shell.....
+
+>>> Editor.objects.filter(id = 2).update(first_name ='Kim')
+1
+>>> Editor.objects.filter(id = 2)
+<QuerySet [<Editor: Kim>]>
