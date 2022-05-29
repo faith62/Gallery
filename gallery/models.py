@@ -8,6 +8,7 @@ class Image(models.Model):
     pub_date = models.DateTimeField(auto_now_add=True, blank=True, null = True)
     image_category= models.ForeignKey('Category',on_delete=models.CASCADE,blank=True,null = True,)
     pic = models.ImageField(upload_to = 'images/',blank=True,null = True,)
+    image_location= models.ForeignKey('Location',on_delete=models.CASCADE,blank=True,null = True,)
 
     def __str__(self):
         return self.name
