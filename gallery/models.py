@@ -7,6 +7,7 @@ class Image(models.Model):
     description = models.CharField(max_length=1000)
     pub_date = models.DateTimeField(auto_now_add=True, blank=True, null = True)
     image_category= models.ForeignKey('Category',on_delete=models.CASCADE,blank=True,null = True,)
+    pic = models.ImageField(upload_to = 'images/')
 
     def __str__(self):
         return self.name
