@@ -9,3 +9,5 @@ python manage.py shell.....
 1
 >>> Editor.objects.filter(id = 2)
 <QuerySet [<Editor: Kim>]>
+
+on_delete=models.CASCADE,
