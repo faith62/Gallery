@@ -1,0 +1,44 @@
+{% load static%}
+<script src="{% static 'js/modal.js' %}"></script> 
+{% block styles %}
+   
+    <link rel="stylesheet" href="{% static 'css/modal.css' %}">
+{% endblock %}
+
+{% block content%}
+<!-- Trigger the Modal -->
+<div class="container">
+   
+    
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+    <!-- The Close Button -->
+    <span class="close">&times;</span>
+
+    <!-- Modal Content (The Image) -->
+    <a class="img-overlay" data-toggle="modal" data-target="#{{image.id}}" style="width:100%">
+        <img src="{{image.pic.url}}" href="" class="image" alt="Image" >
+    </a>
+
+    <!-- Modal Caption (Image Text) -->
+    <div id="caption">
+        <div class="row">
+            <p>Category:{{image.category}}</p>
+        </div>
+        <div class="row">
+            <p>Location:{{image.location}}</p>
+        </div>
+        <div class="row">
+            <h1 class="text-center">Name:{{image.name}}</h1>
+        </div>
+
+        <div class="row">
+            <p>Description:{{image.descripton}}</p>
+        </div>
+            
+    </div>
+    </div>
+    
+</div>
+{%endblock%}

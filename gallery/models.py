@@ -20,11 +20,19 @@ class Image(models.Model):
 
     def delete_image(self):
         self.delete()
-
+    @classmethod
+    def update_image(cls, id ,name, description , image_location, image_category):
+        update = cls.objects.filter(id = id).update(name = name, description = description ,image_location = image_location,image_category = image_category)
+ 
     @classmethod
     def get_all_images(cls):
         images = cls.objects.all()
         return images
+
+    @classmethod
+    def get_image_by_id(cls,id):
+        image = cls.objects.filter(id= id).all()
+        return image
 
     @classmethod
     def search_by_category(cls,image_category):

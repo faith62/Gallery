@@ -1,0 +1,32 @@
+{%extends 'all-news/base.html'%}
+
+ {% block content %}
+
+ <div class="container">
+
+   <div class="row">
+     <img src="{{image.image_image.url}}"  class="img-responsive" width="260px" height="150px" alt="">
+   </div>
+   <div class="row">
+    <p>Category:{{image.category}}</p>
+    </div>
+    <div class="row">
+        <p>Location:{{image.location}}</p>
+    </div>
+    <div class="row">
+        <h1 class="text-center">{{image.name}}</h1>
+    </div>
+
+    <div class="row">
+        <p>Description:{{image.descripton}}</p>
+    </div>
+    
+
+
+   <div class="row">
+     <p>Posted {{article.pub_date|timesince}} by {{article.editor.first_name}}</p>
+   </div>
+
+ </div>
+
+ {% endblock %}
