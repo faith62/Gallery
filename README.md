@@ -2,7 +2,7 @@
 
 Web App to develop a personal gallery application that you display your photos for others to see.
 
-### By Faith Chemutai ,15/05/2022
+### By Faith Chemutai ,31/05/2022
 ## Setup/instalation Requirements
 *You need to have a vs code/ atom , python installed
 *Access to Internet
@@ -21,7 +21,7 @@ Web App to develop a personal gallery application that you display your photos f
 
 - Clone this repository to a location in your file system. `git clone https://github.com/faith62/Gallery.git`
 - Open terminal command line then navigate to the root folder of the application. `cd Gallery`
-
+- Run. `python3.10 manage.py runserver`
 
 ## Deployment environment
 
