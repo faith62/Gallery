@@ -1,6 +1,8 @@
 {%extends 'base.html'%}
 {% load responsive_images %}
 
+{% load static %}
+
 {% block content %}
 {{block.super}}
 
@@ -8,8 +10,8 @@
     {% for image in images %}
    
     <div class="row ">
-        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
-            <img src="{{image.pic.url}}" class="img-responsive" alt="Image" 500x500>               
+        <div id="image" class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
+            <img src="{{image.pic.url}}" class="img-responsive" width="300px" height="180px" alt="Image" >               
             <div class="d-flex justify-content-between tm-text-gray">
                 <span class="tm-text-gray-light">{{ image.name}}</span>                    
             </div>
