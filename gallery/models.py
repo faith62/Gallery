@@ -15,17 +15,8 @@ class Image(models.Model):
     def __str__(self):
         return self.name
 
-    def save(self, *args, **kwargs):
-        super().save(*args, **kwargs)
-
-        if self.pic: #check if image exists before resize
-            img = Image.open(self.pic.path)
-
-            if img.height > 1080 or img.width > 1920:
-                new_height = 720
-                new_width = int(new_height / img.height * img.width)
-                img = img.resize((new_width, new_height))
-                img.save(self.pic.path)
+    def save_image(self):
+        self.save()
 
     def delete_image(self):
         self.delete()
@@ -39,6 +30,11 @@ class Image(models.Model):
     def search_by_category(cls,image_category):
         images = Image.objects.filter(image_category__name__icontains=image_category)
         return images
+
+    @classmethod
+    def filter_by_location(cls, image_location):
+        images_location = cls.objects.filter(image_location__id=image_location)
+        return images_location
 
     class Meta:
         ordering = ['name']

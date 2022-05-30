@@ -9,11 +9,15 @@
     -moz-background-size: cover;
     background-size: 1900px 500px;
     min-height: 400px;
-    opacity: 0.5;
+    opacity: 0.7;
     color: white;
+    
     
 }
 .image img{
     size: 1920px 1080px;
 
+}
+#above{
+    background: rgba(0,0,0,0.8)
 }

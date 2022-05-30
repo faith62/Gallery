@@ -11,3 +11,8 @@ python manage.py shell.....
 <QuerySet [<Editor: Kim>]>
 
 on_delete=models.CASCADE,
+
+<img src="{{image.pic.url}}" class="img-responsive" width="300px" height="180px" alt="Image" >               
+            <div class="d-flex justify-content-between tm-text-gray">
+                <span class="tm-text-gray-light">{{ image.name}}</span>                    
+            </div>
