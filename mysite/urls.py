@@ -16,7 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
+from gallery.views import ImageCreate, ImageListView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('gallery.urls'))
+    path('',include('gallery.urls')),
+    path('', ImageListView.as_view(), name='list'),
+    path('new/', ImageCreate.as_view(), name='new')
 ]

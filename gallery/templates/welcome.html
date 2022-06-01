@@ -4,21 +4,45 @@
 
 {% load static %}
 
+
 {% block content %}
 {{block.super}}
 
 <div class="container" >   
   
-    <div class="row">
-    {% for image in images %}
-        <div  class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
-            <img id="myImg" src="{{image.pic.url}}" alt="Image" width="260px" height="150px">
-            {% include "modal.html" %}               
-            <div class="d-flex justify-content-between tm-text-gray">
-                <span class="tm-text-gray-light">{{ image.name}}</span>                    
-            </div>
+    <div class="row" >
+        {% for image in images %}
+        <div  class="col-xs-6 col-sm-6 col-md-4 col-lg-3">          
+            
+            <img  src="{{image.pic.url}}" alt="Image" width="260px" height="150px">
+            <button type="button" class="btn  btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal{{image.id}}">View</button>                
+                        
+            
         </div> 
-    {% empty %}
+        <!--  modal -->
+        <div class="modal fade"  id="exampleModal{{image.id}}" tabindex="-1"  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalTitle">{{image.image_category }}</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    </div>
+
+                    <div class="modal-body">
+                        <img src="{{image.pic.url}}" class="card-img-top"> <hr>
+                        <p>Description {{image.description }}</p>
+                        <p><strong>Image location</strong>:{{image.image_location }}</p>
+                    </div>
+                    <div class="modal-footer">
+                        <input class="form-control" type="text" value="http://127.0.0.1:8000{{image.pic.url}}" id="thislinkhere-{{image.id}}">
+                        <a ><button type="button" class="btn btn-outline-secondary my-2 my-sm-0 link-btn">Copy</button></a>
+                    </div>
+
+                
+                </div>
+            </div>
+        </div>
+        {% empty %}
     </div>     
     
     <div class="row">
@@ -26,5 +50,7 @@
     </div>
     {% endfor %}
     </div>
+
+          
 {% endblock %}
 </div>

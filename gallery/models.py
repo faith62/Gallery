@@ -1,8 +1,26 @@
 from django.db import models
 
+
 from pyuploadcare.dj.models import ImageField
 
 # Create your models here.
+class Category(models.Model):
+    name = models.CharField(max_length =30)
+
+    def __str__(self):
+        return self.name
+
+    def save_category(self):
+        self.save()
+
+class Location(models.Model):
+    name = models.CharField(max_length =30)
+
+    def __str__(self):
+        return self.name
+    def save_location(self):
+        self.save()
+
 
 class Image(models.Model):
     name = models.CharField(max_length=100)
@@ -35,9 +53,9 @@ class Image(models.Model):
         return image
 
     @classmethod
-    def search_by_category(cls,image_category):
-        images = Image.objects.filter(image_category__name__icontains=image_category)
-        return images
+    def search_by_image_category(cls,search_term):
+        gallery = cls.objects.filter(image_category__image_category__icontains=search_term)
+        return gallery
 
     @classmethod
     def filter_by_location(cls, image_location):
@@ -47,20 +65,4 @@ class Image(models.Model):
     class Meta:
         ordering = ['name']
 
-class Category(models.Model):
-    name = models.CharField(max_length =30)
-
-    def __str__(self):
-        return self.name
-
-    def save_category(self):
-        self.save()
-
-class Location(models.Model):
-    name = models.CharField(max_length =30)
-
-    def __str__(self):
-        return self.name
-    def save_location(self):
-        self.save()
 
