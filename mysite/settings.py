@@ -15,6 +15,9 @@ import django_heroku
 import dj_database_url
 from decouple import config,Csv
 
+import cloudinary.uploader
+import cloudinary.api
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR =os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -62,8 +65,8 @@ ALLOWED_HOSTS = ['127.0.0.1','']
 # Application definition
 
 INSTALLED_APPS = [
-    
-      
+    'cloudinary_storage',  
+    'cloudinary',      
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -166,10 +169,19 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dgrjyra6k',
+    'API_KEY': '748511361159413',
+    'API_SECRET': 'bn0udwsD1_RzIs8Im7u_BYe26CE'
+}
 
 # Configure Django App for Heroku.
 django_heroku.settings(locals())
+
+
 
 UPLOADCARE = {
     'pub_key': 'demopublickey',

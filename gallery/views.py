@@ -8,8 +8,6 @@ def welcome(request):
     images = Image.get_all_images()
     
     return render(request,'welcome.html',{"images":images})
-# Create your views here.
-
 
 def search_results(request):
 
