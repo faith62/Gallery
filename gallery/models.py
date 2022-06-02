@@ -1,8 +1,5 @@
 from django.db import models
 
-
-from pyuploadcare.dj.models import ImageField
-
 # Create your models here.
 class Category(models.Model):
     name = models.CharField(max_length =30)
@@ -59,9 +56,9 @@ class Image(models.Model):
         return image
 
     @classmethod
-    def search_by_image_category(cls,search_term):
-        gallery = cls.objects.filter(image_category__icontains=search_term)
-        return gallery
+    def search_by_image_category(cls,image_category):
+        images = cls.objects.filter(image_category__name__icontains=image_category)
+        return images
 
     @classmethod
     def filter_by_location(cls, image_location):

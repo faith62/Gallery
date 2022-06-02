@@ -22,5 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('gallery.urls')),
     path('', ImageListView.as_view(), name='list'),
-    path('new/', ImageCreate.as_view(), name='new')
+    path('new/', ImageCreate.as_view(), name='new'),
 ]

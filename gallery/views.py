@@ -15,8 +15,8 @@ def search_results(request):
 
     categories = Category.objects.all()
     locations = Location.objects.all()
-    if 'image' in request.GET and request.GET["image"]:
-        search_term = request.GET.get("image")
+    if 'image_category' in request.GET and request.GET["image_category"]:
+        search_term = request.GET.get("image_category")
         searched_images = Image.search_by_image_category(search_term)
         message = f"{search_term}"
 
