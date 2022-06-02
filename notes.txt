@@ -3,6 +3,8 @@
     python3.10 manage.py sqlmigrate gallery 0001....view migration
     python3.10 manage.py migrate.....run migration
 
+    DATABASE_URL = 'postgres://tbfxzxvmidrrid:8c9ef9f27e2970149a497f0c6adfd118ec4b93f1c79cd982a117013ae1c1997e@ec2-44-196-174-238.compute-1.amazonaws.com:5432/d2mscf4ntdfvhc'
+
 python manage.py shell.....
 
 >>> Editor.objects.filter(id = 2).update(first_name ='Kim')
