@@ -1,7 +1,7 @@
 from django.test import TestCase
 from models import Image,Category, Location
 
-class EditorTestClass(TestCase):
+class ImageTestClass(TestCase):
 
     # Set up method
     def setUp(self):
