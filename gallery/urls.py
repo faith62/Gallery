@@ -6,7 +6,7 @@ from . import views
 urlpatterns=[
     path('',views.welcome, name='welcomeGal'),
     path('search/', views.search_results, name='search_results'),
-    # path('image/',views.image,name ='image'),
+   
     
 ]
 if settings.DEBUG:

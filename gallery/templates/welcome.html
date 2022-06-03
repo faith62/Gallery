@@ -1,9 +1,6 @@
-{%extends 'base.html'%}
-
+{% extends "base.html" %}
 {% load responsive_images %}
-
 {% load static %}
-
 
 {% block content %}
 {{block.super}}
@@ -16,7 +13,7 @@
                        
             <img  src="{{image.pic.url}}" alt="Image" id="display" data-bs-toggle="modal" data-bs-target="#exampleModal{{image.id}}" width="260px" height="150px">                     
             <div class="d-flex justify-content-between tm-text-gray">
-                <span class="tm-text-gray-light">{{ image.name}}</span>                    
+                <span class="tm-text-gray-light">{{image.name}}</span>                    
             </div>           
         </div> 
         

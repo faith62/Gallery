@@ -1,12 +1,11 @@
 from django.shortcuts import render
-from django.http  import Http404, HttpResponse
+from django.http  import Http404
 from django.views.generic import ListView, CreateView 
 from .models import Category, Image, Location
 
 # Create your views here.
 def welcome(request):
-    images = Image.get_all_images()
-    
+    images = Image.get_all_images()    
     return render(request,'welcome.html',{"images":images})
 
 def search_results(request):

@@ -42,8 +42,8 @@ class Image(models.Model):
     def delete_image(self):
         self.delete()
     @classmethod
-    def update_image(cls, id ,name, description , image_location, image_category):
-        update = cls.objects.filter(id = id).update(name = name, description = description ,image_location = image_location,image_category = image_category)
+    def update_image(cls, id ,name, description , image_location, image_category,pic):
+        update = cls.objects.filter(id = id).update(name = name, description = description ,image_location = image_location,image_category = image_category, pic=pic)
  
     @classmethod
     def get_all_images(cls):
@@ -64,7 +64,7 @@ class Image(models.Model):
     def filter_by_location(cls, image_location):
         images_location = cls.objects.filter(image_location__id=image_location)
         return images_location
-
+    
     class Meta:
         ordering = ['name']
 
